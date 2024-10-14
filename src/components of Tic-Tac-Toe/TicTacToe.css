@@ -1,0 +1,62 @@
+* {
+  background-color: rgb(160, 121, 196);
+  color: white;
+}
+.GBtn {
+  height: 5rem;
+  width: 5rem;
+  margin: 1rem;
+  font-size: 3rem;
+  font-family: bold;
+  display: flex;
+  padding-top: 6px;
+  padding-left: 20px;
+  background-color: white;
+  color: rgb(160, 121, 196);
+  border: none;
+}
+.row_one {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+
+.gameBoard {
+  display: flex;
+  margin-left: 2rem;
+}
+
+.GBtn:hover {
+  background-color: rgb(133, 111, 146);
+  color: white;
+}
+
+.container {
+  padding: 5% 30%;
+ 
+}
+h1 {
+  margin-left: 8rem;
+}
+
+p {
+  margin-left: 10rem;
+}
+.ResetBTN,
+.Start_Btn {
+  background-color: white;
+  color: rgb(133, 111, 146);
+  border-radius: 2rem;
+  width: 7rem;
+  font-weight: 500;
+  height: 3rem;
+  margin-left: 8rem;
+}
+
+@media (max-width: 550px) {
+  .container {
+    padding: 2% 5%;
+    margin-top: 30%;
+  }
+}
