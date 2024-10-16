@@ -1,50 +1,27 @@
-import React, { createContext, useContext, useState } from "react";
-const ThemeContext = createContext(null);
-import "../src/App.css";
+import React from "react";
+import { useState } from "react";
+
 export default function App() {
-  const [theme, setTheme] = useState("light");
+  const [joke, setJoke] = useState("");
 
-  function Form({ children }) {
-    return (
-      <Panel title="Welcome">
-        <Button>Login</Button>
-        <Button>Sign Up</Button>
-      </Panel>
-    );
-  }
+  const URL = "https://official-joke-api.appspot.com/jokes/random";
 
-  function Panel({ title, children }) {
-    const theme = useContext(ThemeContext);
-    const className = "panel-" + theme;
-    return (
-      <section className={className}>
-        <h2>{title}</h2>
-        {children}
-      </section>
-    );
-  }
-
-  function Button({ children }) {
-    const theme = useContext(ThemeContext);
-    const className = "button-" + theme;
-    return <button className={className}>{children}</button>;
-  }
+  const JokeGenerator = async () => {
+    let response = await fetch(URL);
+    let JSONResponse = await response.json();
+    console.log(JSONResponse);
+    setJoke({ setup: JSONResponse.setup, punchline: JSONResponse.punchline });
+  };
 
   return (
     <div>
-      <ThemeContext.Provider value={theme}>
-        <Form />
-        <label>
-          <input
-            type="checkbox"
-            checked={theme === "dark"}
-            onChange={(e) => {
-              setTheme(e.target.checked ? "dark" : "light");
-            }}
-          />
-          Use Dark Mode
-        </label>
-      </ThemeContext.Provider>
+      <h3>Random Joke Generator</h3>
+      <br />
+      <button onClick={JokeGenerator}>Get Joke</button>
+      <div className="joke">
+        <h4>{joke.setup}</h4>
+<p>{joke.punchline}</p>
+      </div>
     </div>
   );
 }
