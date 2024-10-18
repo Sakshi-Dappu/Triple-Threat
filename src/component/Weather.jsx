@@ -8,14 +8,13 @@ export default function Weather() {
   const WeatherResponse = async (city) => {
     const URL = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_Key}`;
 
-    try {
-      let response = await fetch(URL);
-      let JSONResponse = await response.json();
-      console.log(JSONResponse);
-      setWeather(JSONResponse);
-    } catch (error) {
-      console.log("ERROR: ", error);
-    }
+    let response = await fetch(URL);
+    let JSONResponse = await response.json();
+   
+
+   
+    console.log(JSONResponse);
+    setWeather(JSONResponse);
   };
 
   return (

@@ -1,8 +1,11 @@
 import React from "react";
 
 export default function InfoBox({ value }) {
-  if (!value || !value.city || !value.list || value.list.length === 0) {
-    return <h2>"Search For a location"</h2>;
+  if (value === "") {
+    return <h2>Search For a location</h2>;
+  }
+  if (value.cod === "404") {
+    throw new Error("City not found");
   }
 
   const city_name = value.city.name;
@@ -19,10 +22,16 @@ export default function InfoBox({ value }) {
 
     return (
       <div key={index}>
-        
-        <p><b>Population:</b> {population}</p>
-        <p><b>Sunrise:</b> {sunrise}</p>
-        <p><b>Sunset: </b>{sunset}</p>
+        <p>
+          <b>Population:</b> {population}
+        </p>
+        <p>
+          <b>Sunrise:</b> {sunrise}
+        </p>
+        <p>
+          <b>Sunset: </b>
+          {sunset}
+        </p>
       </div>
     );
   });
@@ -36,5 +45,3 @@ export default function InfoBox({ value }) {
     </div>
   );
 }
-
-
