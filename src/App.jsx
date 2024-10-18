@@ -1,9 +1,14 @@
 import React from "react";
-import Weather from "./component/Weather";
+import Counter from "./component/EBComponents/Counter";
+import ErrorBoundary from "./component/EBComponents/ErrorBoundary";
+// import Weather from "./component/Weather";
 export default function App() {
   return (
     <div>
-      <Weather />
+      {/* <Weather /> */}
+      <ErrorBoundary>
+        <Counter />
+      </ErrorBoundary>
     </div>
   );
 }
