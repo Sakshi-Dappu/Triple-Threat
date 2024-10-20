@@ -5,10 +5,11 @@ import InfoBox from "./InfoBox";
 export default function Weather() {
   const [info, setInfo] = useState(null);
   const [errData, setErrData] = useState(null);
-  const GetData = async (location) => {
-    const API_Key = "cb5f39912e548a00caf9112a4f3ae23d";
+  const GetData = async (location, eventDate, eventTime) => {
+    const API_Key = "YLZJQDHJTSGUDTYJVP3S4ATVZ";
+    console.log("In weather app", location, eventDate, eventTime);
+    const URL = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location},IN/${eventDate}T${eventTime}?key=${API_Key}`;
 
-    const URL = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${API_Key}`;
     const response = await fetch(URL);
     const JsonResponse = await response.json();
     console.log(JsonResponse);
@@ -23,9 +24,11 @@ export default function Weather() {
 
   return (
     <div className="container">
-      <h1>Weather Widget</h1>
-      <SearchBox onSearch={GetData} />
-      <InfoBox data={info} />
-    </div>
+      
+        {/* <h1>Weather Widget</h1> */}
+        <SearchBox onSearch={GetData} />
+        <InfoBox data={info} />
+      </div>
+  
   );
 }

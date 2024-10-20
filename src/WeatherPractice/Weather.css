@@ -1,10 +1,19 @@
-.container {
-  height: 15rem;
-  width: 40rem;
+.Weather_container {
   padding: 35px;
   margin-top: 2rem;
   border: 8px solid ligh;
-  background-color: lightskyblue;
-  color: cornsilk;
+  background-color: rgb(38, 38, 38);
+  opacity: 0.4;
+  color: white;
+
   border-radius: 3rem;
+}
+
+.container {
+  background-image: url("Rainy weather.jpg");
+  background-size: cover;
+  height: 60rem;
+  margin-top: 5rem;
+  border-radius: 3rem;
+  padding: 2rem;
 }
