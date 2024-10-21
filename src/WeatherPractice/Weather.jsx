@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Weather.css";
 import SearchBox from "./SearchBox";
 import InfoBox from "./InfoBox";
+
 export default function Weather() {
   const [info, setInfo] = useState(null);
   const [errData, setErrData] = useState(null);
@@ -21,14 +22,16 @@ export default function Weather() {
       console.log("Response:", JsonResponse);
     }
   };
+  const handleNewSearch = () => {
+    setInfo(null);
+    console.log("Data sent to null");
+  };
 
   return (
-    <div className="container">
-      
-        {/* <h1>Weather Widget</h1> */}
-        <SearchBox onSearch={GetData} />
-        <InfoBox data={info} />
-      </div>
-  
+    <div className="newCont">
+      {!info && <SearchBox  className="SearchBox"    onSearch={GetData} />}
+
+      {info && <InfoBox data={info}  className="InfoBox"  onClick={handleNewSearch}></InfoBox>}
+    </div>
   );
 }

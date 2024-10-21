@@ -29,7 +29,11 @@ export default function SearchBox({ onSearch }) {
 
   return (
     <div className="searchBoxContainer">
+      <div className="Lables">
+
+     
       <label className="nameLabels">Enter Location:</label>
+      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
       <input
         onChange={handleInputChange}
         type="text"
@@ -37,8 +41,9 @@ export default function SearchBox({ onSearch }) {
         placeholder="Event Location"
       />
       <br />
-
+<br />
       <label className="nameLabels">Enter Event Time:</label>
+      &nbsp; &nbsp; &nbsp;&nbsp;  &nbsp;
       <input
         type="time"
         className="searchBox_placeholder"
@@ -46,7 +51,9 @@ export default function SearchBox({ onSearch }) {
         onChange={handleEventTime}
       />
       <br />
+      <br />
       <label className="nameLabels">Enter Event Date:</label>
+      &nbsp; &nbsp; &nbsp; &nbsp; 
       <input
         type="date"
         className="searchBox_placeholder"
@@ -54,12 +61,11 @@ export default function SearchBox({ onSearch }) {
         onChange={handleEventDate}
       />
       <br />
+      </div>
+      <button className="searchBtn" onClick={handleSearch}>
+        Check weather
+      </button>
 
-      {location && (
-        <button className="searchBtn" onClick={handleSearch}>
-          Check sky
-        </button>
-      )}
       <br />
     </div>
   );

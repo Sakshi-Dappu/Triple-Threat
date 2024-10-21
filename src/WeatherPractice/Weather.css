@@ -1,19 +1,21 @@
 .Weather_container {
   padding: 35px;
   margin-top: 2rem;
-  border: 8px solid ligh;
   background-color: rgb(38, 38, 38);
   opacity: 0.4;
   color: white;
-
   border-radius: 3rem;
 }
 
-.container {
-  background-image: url("../img/Windy.jpg");
+.newCont {
+  background-image: url("../img/Cloudy.jpeg");
   background-size: cover;
-  height: 60rem;
-  margin-top: 5rem;
-  border-radius: 3rem;
-  padding: 2rem;
+  background-position: center;
+  height: 75rem;
+  margin: 5rem 25rem;
+
+  padding-top: 10rem;
+  padding-left: 2rem;
+  width: 120rem;
+  border-radius: 2rem;
 }

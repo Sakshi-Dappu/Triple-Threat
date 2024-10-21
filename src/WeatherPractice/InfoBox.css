@@ -11,15 +11,43 @@
     height: 30rem;
     font-size: 25px;
   }
+}
+.userInfo {
+  border: 2px solid black;
+  border-radius: 3rem;
+  background-color: black;
+  color: white;
+  opacity: 0.7;
+  padding: 3rem;
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  height: 10rem;
+  width: 45rem;
+  font-size: 20px;
+  display: inline;
+  margin-left: 5rem;
+}
 
-  .cards {
-    border: 2px solid black;
-    border-radius: 3rem;
-    background-color: black;
-    color: white;
-    opacity: 0.7;
-    padding: 3rem;
-    font-size: 1.5rem;
-    height: 30rem;
-  }
+.InfoCard {
+  border: 2px solid black;
+  border-radius: 3rem;
+  background-color: black;
+  color: white;
+  opacity: 0.7;
+  padding: 3rem;
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  height: 30rem;
+  width: 45rem;
+  margin-left: 5rem;
+  font-size: 25px;
+}
+.newSearchBtn {
+  margin: 1rem;
+  border: none;
+  background-color: white;
+  color: black;
+  border-radius: 2rem;
+  padding: 0.5rem;
+  margin: 2rem;
 }
