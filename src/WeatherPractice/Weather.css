@@ -10,7 +10,7 @@
 }
 
 .container {
-  background-image: url("Rainy weather.jpg");
+  background-image: url("../img/Windy.jpg");
   background-size: cover;
   height: 60rem;
   margin-top: 5rem;

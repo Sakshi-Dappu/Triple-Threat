@@ -5,11 +5,15 @@ export default function InfoBox({ data }) {
     <div>
       {data && (
         <div className="InfoCard">
-          {/* <div>{data.resolvedAddress || "Location not available"}</div> */}
           <div>
-            <h5>Weather Forecast on provided info</h5>
+            <p>
+              {data.resolvedAddress} &nbsp;&nbsp;{data.days[0].datetime}{" "}
+              &nbsp;&nbsp;{" "}
+              {new Date(data.days[0].datetimeEpoch * 1000).toLocaleString()}{" "}
+            </p>
+
             <li>Condition: &nbsp;&nbsp;{data.days[0].conditions}</li>
-            <li>Description: &nbsp;&nbsp;{data.description}</li>
+            <li> Description: &nbsp;&nbsp;{data.days[0].description}</li>
             <li>Sky Looks:&nbsp;&nbsp; {data.days[0].icon}</li>
           </div>
 
