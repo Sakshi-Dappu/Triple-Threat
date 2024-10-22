@@ -1,21 +1,13 @@
-.Weather_container {
-  padding: 35px;
-  margin-top: 2rem;
-  background-color: rgb(38, 38, 38);
-  opacity: 0.4;
-  color: white;
-  border-radius: 3rem;
-}
-
 .newCont {
-  background-image: url("../img/Cloudy.jpeg");
+
+  
   background-size: cover;
   background-position: center;
-  height: 75rem;
-  margin: 5rem 25rem;
-
-  padding-top: 10rem;
-  padding-left: 2rem;
-  width: 120rem;
+  height: 50rem;
+  margin: 5rem 20rem;
+  
+  width: 85rem;
   border-radius: 2rem;
 }
+  /* background-image: url("../img/Cloudy.jpeg"); */
+  /* background-image: 'https://unsplash.com/photos/typhoon-i9w4Uy1pU-s';/ */

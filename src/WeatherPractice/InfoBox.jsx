@@ -13,7 +13,7 @@ export default function InfoBox({ data, onClick }) {
             <button className="newSearchBtn" onClick={onClick}>
               New Search
             </button>
-          </div>
+          </div> 
 
           <div className="InfoCard">
             <li>Condition: &nbsp;&nbsp;{data.days[0].conditions}</li>
