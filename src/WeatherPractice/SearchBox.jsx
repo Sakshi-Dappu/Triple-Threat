@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./SearchBox.css";
 
-export default function SearchBox({ onSearch, error }) {
+export default function SearchBox({ onSearch}) {
   const [location, setLocation] = useState("");
   const [eventDate, setEventDate] = useState("");
   const [eventTime, setEventTime] = useState("");
@@ -27,37 +27,38 @@ export default function SearchBox({ onSearch, error }) {
     setEventTime(`${time}:00`);
   };
 
+  
+
   return (
-
     <div className="searchBoxContainer">
-
-      {error && <h3>Location not found</h3>}
       <div className="Lables">
         <label className="nameLabels">
           E n t e r &nbsp;&nbsp; L o c a t i o n:
         </label>
-        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+        &nbsp; &nbsp; &nbsp; 
         <input
           onChange={handleInputChange}
           type="text"
           className="searchBox_placeholder"
           placeholder="Event Location"
+          value={location}
         />
         <br />
+       
         <br />
-        <label className="nameLabels">E n t e r &nbsp; T i m e :</label>
-        &nbsp; &nbsp; &nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <label className="nameLabels">E n t e r  &nbsp; T i m e :</label>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <input
           type="time"
           className="searchBox_placeholder"
           placeholder="event time"
           onChange={handleEventTime}
+          value={eventTime}
         />
         <br />
         <br />
         <label className="nameLabels">
-          E n t e r&nbsp;&nbsp; E v e n t D a t e:
+          E n t e r&nbsp;&nbsp;  D a t e:
         </label>
         &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;
         <input
@@ -65,12 +66,17 @@ export default function SearchBox({ onSearch, error }) {
           className="searchBox_placeholder"
           placeholder="Event Date "
           onChange={handleEventDate}
+          value={eventDate}
         />
         <br />
+        <br />
       </div>
-      <button className="searchBtn" onClick={handleSearch}>
-        Check weather
-      </button>
+    
+        <button className="searchBtn" onClick={handleSearch}>
+          Check weather
+        </button>
+    
+      <br />
 
       <br />
     </div>
