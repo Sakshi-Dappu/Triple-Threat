@@ -4,6 +4,7 @@ import SearchBox from "./SearchBox";
 import InfoBox from "./InfoBox";
 import ErrorBox from "./ErrorBox";
 
+
 export default function Weather() {
   const [info, setInfo] = useState(null);
   const [error, setError] = useState(false);
@@ -35,29 +36,39 @@ export default function Weather() {
     setError(false);
   };
 
-  const INT_URL = "/img/clear sky.jpg";
-  const HOT_URL = "/img/Summer.jpg";
-  const COLD_URL = "/img/snow.jpg";
-  const RAIN_URL = "/img/Rainy weather.jpg";
-  const WINDY_URL = "/img/Windy.jpg";
 
-let bgImage = INT_URL;
+
+  
 
 
 
+  // if (info) {
+  //   const humid = info.days[0].humidity;
+  //   console.log('Humidity level:', humid);
+  //   if (humid < 10) {
+  //     bgImage = COLD_URL;
+  //   } else if (humid >= 10 && humid < 50) {
+  //     bgImage = WINDY_URL;
+  //   } else if (humid >= 50 && humid < 75) {
+  //     bgImage = RAIN_URL;
+  //   } else {
+  //     bgImage = HOT_URL;
+  //   }
+  //   console.log('Background Image URL:', bgImage);
+  // }
 
+  // Check based on conditions why the bg img are not appearing
   return (
-
     <div
       className="newCont"
-      style={{
-        backgroundImage: `url(${bgImage})`,
-      }}
+      // style={{
+      //   backgroundImage: `url(${bgImage})`,
+      // }}
     >
       {!info && error === false && (
         <SearchBox
           className="SearchBox"
-          onSearch={GetData}
+           onSearch={GetData}
           error={error}
           handleErrorSearch={handleErrorSearch}
         />
@@ -75,3 +86,6 @@ let bgImage = INT_URL;
     </div>
   );
 }
+
+
+

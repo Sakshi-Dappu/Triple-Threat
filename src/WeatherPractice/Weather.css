@@ -1,12 +1,15 @@
 .newCont {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  background-size: contain;
+  background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
   padding: 3rem;
   margin: 2rem;
   width: 80rem;
   border-radius: 2rem;
   margin-left: 8rem;
+ background-image: url("../img/Cloudy.jpeg");
 }
-/* background-image: url("../img/Cloudy.jpeg"); */
+
 /* background-image: 'https://unsplash.com/photos/typhoon-i9w4Uy1pU-s';/ */
