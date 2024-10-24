@@ -3,12 +3,12 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 100vh;
-  padding: 3rem;
-  margin: 2rem;
-  width: 80rem;
+  height: 90vh;
+  padding: 8rem;
+margin-top: 3rem;
+  width: 90rem;
   border-radius: 2rem;
-  margin-left: 8rem;
+  margin-left: 15rem;
  background-image: url("../img/Cloudy.jpeg");
 }
 
