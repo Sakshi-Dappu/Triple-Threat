@@ -7,18 +7,25 @@ export default function InfoBox({ data, onClick }) {
       {data && (
         <>
           <div className="userInfo">
+            <h3>Provided Details</h3>
+            <hr />
+           
             {data.resolvedAddress} <br />
             {new Date(data.days[0].datetimeEpoch * 1000).toLocaleString()}
+            <br />
             <button className="newSearchBtn" onClick={onClick}>
               Check different location
             </button>
           </div>
 
           <div className="InfoCard">
-            <li>Temperature:&nbsp;&nbsp;{data.days[0].temp} &nbsp;°C </li>
+            <h3>Weather Info</h3>
+            <hr />
+           
             {data.days[0].description && (
               <li> Description: &nbsp;&nbsp;{data.days[0].description}</li>
             )}
+            <li>Temperature:&nbsp;&nbsp;{data.days[0].temp} &nbsp;°C </li>
 
             <li>Sky Looks:&nbsp;&nbsp; {data.days[0].icon}</li>
 
@@ -38,7 +45,9 @@ export default function InfoBox({ data, onClick }) {
                 parseInt(data.days[0].sunset.split(":")[0]) >= 12 ? "PM" : "AM"
               }`}
             </li>
-            <li>UV Index: &nbsp;&nbsp; {data.days[0].uvindex}</li>
+            {data.days[0].uvindex && (
+              <li>UV Index: &nbsp;&nbsp; {data.days[0].uvindex}</li>
+            )}
             <li>Humidity:&nbsp; &nbsp;{data.days[0].humidity} &nbsp;°C</li>
           </div>
         </>

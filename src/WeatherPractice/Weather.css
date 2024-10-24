@@ -3,13 +3,16 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 90vh;
-  padding: 8rem;
+  height: 92vh;
+  padding: 5rem;
 margin-top: 3rem;
   width: 90rem;
   border-radius: 2rem;
   margin-left: 15rem;
  background-image: url("../img/Cloudy.jpeg");
+ display: flex;
 }
 
 /* background-image: 'https://unsplash.com/photos/typhoon-i9w4Uy1pU-s';/ */
+
+

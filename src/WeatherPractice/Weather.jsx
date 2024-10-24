@@ -3,11 +3,11 @@ import "./Weather.css";
 import SearchBox from "./SearchBox";
 import InfoBox from "./InfoBox";
 import ErrorBox from "./ErrorBox";
+import Clothing from "./Clothing";
 
 export default function Weather() {
   const [info, setInfo] = useState(null);
   const [error, setError] = useState(false);
-// const [bgImage, setBgImage] = useState("https://wallup.net/wp-content/uploads/2016/03/10/318375-nature-landscape-lake-mountain-forest-wildflowers-spring-pine_trees-path-Switzerland-HDR.jpg")
   const GetData = async (location, eventDate, eventTime) => {
     const API_Key = "YLZJQDHJTSGUDTYJVP3S4ATVZ";
     // const API_Key = process.env.API_Key;
@@ -34,60 +34,61 @@ export default function Weather() {
   const handleErrorSearch = () => {
     setError(false);
   };
-  const INIT_URL = "https://wallup.net/wp-content/uploads/2016/03/10/318375-nature-landscape-lake-mountain-forest-wildflowers-spring-pine_trees-path-Switzerland-HDR.jpg";
+  const INIT_URL =
+    "https://wallup.net/wp-content/uploads/2016/03/10/318375-nature-landscape-lake-mountain-forest-wildflowers-spring-pine_trees-path-Switzerland-HDR.jpg";
 
-const COLD_URL = "https://s4.scoopwhoop.com/anj/snow/50e4de95-1be0-4440-9efa-995d6eee52ee.jpg";
-const HOT_URL = "https://wallpapercave.com/wp/wp3098031.jpg";
-const WINDY_URL = "https://wallpapercave.com/wp/wp2108762.jpg";
-const RAIN_URL = "https://png.pngtree.com/background/20230616/original/pngtree-rain-falling-down-on-a-tree-leaves-picture-image_3626721.jpg";
+  const COLD_URL =
+    "https://s4.scoopwhoop.com/anj/snow/50e4de95-1be0-4440-9efa-995d6eee52ee.jpg";
+  const HOT_URL = "https://wallpapercave.com/wp/wp3098031.jpg";
+  const WINDY_URL = "https://wallpapercave.com/wp/wp2108762.jpg";
+  const RAIN_URL =
+    "https://png.pngtree.com/background/20230616/original/pngtree-rain-falling-down-on-a-tree-leaves-picture-image_3626721.jpg";
 
-let bgImage = INIT_URL;
+  let bgImage = INIT_URL;
 
   if (info) {
     const humid = info.days[0].humidity;
-    console.log('Humidity level:', humid);
+    console.log("Humidity level:", humid);
     if (humid < 10) {
       bgImage = COLD_URL;
     } else if (humid >= 10 && humid < 50) {
-    bgImage =   WINDY_URL;
+      bgImage = WINDY_URL;
     } else if (humid >= 50 && humid < 75) {
       bgImage = RAIN_URL;
     } else {
       bgImage = HOT_URL;
     }
-    console.log('Background Image URL:', bgImage);
-  } 
+    console.log("Background Image URL:", bgImage);
+  }
 
-  // Check based on conditions why the bg img are not appearing
   return (
-    // <div
-    //   className="newCont"
-    //   style={{
-    //     backgroundImage: `url(${bgImage})`,
-    //   }}
-    // >
     <div
       className="newCont"
       style={{
         backgroundImage: `url(${bgImage})`,
       }}
     >
-      {!info && error === false && (
-        <SearchBox
-          className="SearchBox"
-          onSearch={GetData}
-          error={error}
-          handleErrorSearch={handleErrorSearch}
-        />
-      )}
+      <div className="Col_one">
+        {!info && error === false && (
+          <SearchBox
+            className="SearchBox"
+            onSearch={GetData}
+            error={error}
+            handleErrorSearch={handleErrorSearch}
+          />
+        )}
 
-      {info && (
-        <InfoBox
-          data={info}
-          className="InfoBox"
-          onClick={handleNewSearch}
-        ></InfoBox>
-      )}
+        {info && (
+          <InfoBox
+            data={info}
+            className="InfoBox"
+            onClick={handleNewSearch}
+          ></InfoBox>
+        )}
+      </div>
+      <div className="col_two">
+        {info && <Clothing className="Clothing_Box" />}
+      </div>
 
       {error && <ErrorBox onClick={handleErrorSearch} />}
     </div>
