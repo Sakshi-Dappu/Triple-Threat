@@ -39,22 +39,23 @@ export default function Weather() {
 
   const COLD_URL =
     "https://s4.scoopwhoop.com/anj/snow/50e4de95-1be0-4440-9efa-995d6eee52ee.jpg";
-  const HOT_URL = "https://wallpapercave.com/wp/wp3098031.jpg";
-  const WINDY_URL = "https://wallpapercave.com/wp/wp2108762.jpg";
+  const HOT_URL = "https://www.zastavki.com/pictures/originals/2015/Nature_A_bright_summer_sun_in_the_sky_093669_.jpg";
+  const CLOUDY_URL = "https://getwallpapers.com/wallpaper/full/e/9/d/16791.jpg";
   const RAIN_URL =
     "https://png.pngtree.com/background/20230616/original/pngtree-rain-falling-down-on-a-tree-leaves-picture-image_3626721.jpg";
 
   let bgImage = INIT_URL;
 
   if (info) {
+    const temp = info.days[0].temp;
     const humid = info.days[0].humidity;
-    console.log("Humidity level:", humid);
-    if (humid < 10) {
+    console.log("Temp level:", temp);
+    if (temp < -5 && temp <= 10) {
       bgImage = COLD_URL;
-    } else if (humid >= 10 && humid < 50) {
-      bgImage = WINDY_URL;
-    } else if (humid >= 50 && humid < 75) {
+    } else if (temp >= 20 && temp < 30) {
       bgImage = RAIN_URL;
+    } else if (temp >= 30 && temp < 80 && humid >= 45) {
+      bgImage = CLOUDY_URL;
     } else {
       bgImage = HOT_URL;
     }
@@ -67,7 +68,7 @@ export default function Weather() {
       style={{
         backgroundImage: `url(${bgImage})`,
       }}
-    >
+    > 
       <div className="Col_one">
         {!info && error === false && (
           <SearchBox
@@ -87,7 +88,7 @@ export default function Weather() {
         )}
       </div>
       <div className="col_two">
-        {info && <Clothing className="Clothing_Box" />}
+        {info && <Clothing className="Clothing_Box" temp={info.days[0].temp} humid={info.days[0].humidity} />}
       </div>
 
       {error && <ErrorBox onClick={handleErrorSearch} />}

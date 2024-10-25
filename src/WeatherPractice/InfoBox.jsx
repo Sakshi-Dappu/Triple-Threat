@@ -9,7 +9,6 @@ export default function InfoBox({ data, onClick }) {
           <div className="userInfo">
             <h3>Provided Details</h3>
             <hr />
-           
             {data.resolvedAddress} <br />
             {new Date(data.days[0].datetimeEpoch * 1000).toLocaleString()}
             <br />
@@ -21,7 +20,7 @@ export default function InfoBox({ data, onClick }) {
           <div className="InfoCard">
             <h3>Weather Info</h3>
             <hr />
-           
+
             {data.days[0].description && (
               <li> Description: &nbsp;&nbsp;{data.days[0].description}</li>
             )}
