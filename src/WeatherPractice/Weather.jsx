@@ -4,14 +4,14 @@ import SearchBox from "./SearchBox";
 import InfoBox from "./InfoBox";
 import ErrorBox from "./ErrorBox";
 import Clothing from "./Clothing";
-import Spinner from "./Spinner";
+
 
 export default function Weather() {
   const [info, setInfo] = useState(null);
   const [error, setError] = useState(false);
   const GetData = async (location, eventDate, eventTime) => {
-    const API_Key = "YLZJQDHJTSGUDTYJVP3S4ATVZ";
-    // const API_Key = process.env.API_Key;
+    
+    const API_Key = process.env.API_Key;
     console.log("In weather app", location, eventDate, eventTime);
     const URL = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location},IN/${eventDate}T${eventTime}?key=${API_Key}`;
 
