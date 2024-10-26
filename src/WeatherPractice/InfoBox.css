@@ -42,21 +42,22 @@ li {
 
 @media (max-width: 550px) {
   .userInfo {
-    margin-top: 1.5rem;
+    margin-left: 2rem;
+    margin-top: 3rem;
     border-radius: 10px;
     background-color: black;
     color: white;
     opacity: 0.6;
     padding: 2rem;
-    height: 17rem;
-    width: 13rem;
+    height: 16rem;
+    width: 20rem;
     display: block;
     font-size: 19px;
     text-align: center;
   }
 
   .newSearchBtn {
-    margin-top: 60px;
+    margin-top: 30px;
     margin-left: 0rem;
     padding: 1rem;
     border: none;
@@ -71,28 +72,17 @@ li {
     font-family: Georgia, "Times New Roman", Times, serif;
   }
 
-  h3 {
-    display: none;
-  }
-  hr {
-    display: none;
-  }
-
   .InfoCard {
     border-radius: 10px;
     background-color: black;
     color: white;
     opacity: 0.7;
-    /* padding: 10px; */
+
     text-align: center;
     margin-top: 1.5rem;
-    height: 17rem;
-    width: 15rem;
-    font-size: 14px;
+    height: 25rem;
+    width: 20rem;
+    font-size: 18px;
     margin-left: 2rem;
-  }
-
-  .box {
-    display: flex;
   }
 }

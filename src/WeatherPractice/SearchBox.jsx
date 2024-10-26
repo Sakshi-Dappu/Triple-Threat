@@ -70,7 +70,7 @@ export default function SearchBox({ onSearch }) {
         <br />
       </div>
 
-      <button className="searchBtnm" onClick={handleSearch}>
+      <button className="search_btn" onClick={handleSearch}>
         Check weather
       </button>
 

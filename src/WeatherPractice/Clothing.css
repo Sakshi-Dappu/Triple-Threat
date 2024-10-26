@@ -44,23 +44,23 @@ h3 {
 
 
   .Clothing_suggestion {
-    border-radius: 3rem;
+    border-radius: 0.5rem;
     background-color: black;
     color: white;
     opacity: 0.7;
-  margin-top: 5rem;
-    height: 20rem;
-    width: 18rem;
+  margin-top: 2rem;
+    height: 26rem;
+    width: 19.5rem;
     font-size: 15px;
     align-items: center;
-    margin-left: 16%;
+    margin-left: 9%;
     padding: 2.5rem 0.1rem;
     font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   }
   .Img {
-    height: 11rem;
+    height: 12rem;
     background-size: contain;
-    width: 11rem;
+    width: 12.5rem;
    
     margin-left: 3.5rem;
   }
