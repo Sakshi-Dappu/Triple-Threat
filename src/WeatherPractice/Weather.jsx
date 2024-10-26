@@ -4,6 +4,7 @@ import SearchBox from "./SearchBox";
 import InfoBox from "./InfoBox";
 import ErrorBox from "./ErrorBox";
 import Clothing from "./Clothing";
+import Spinner from "./Spinner";
 
 export default function Weather() {
   const [info, setInfo] = useState(null);
@@ -35,11 +36,12 @@ export default function Weather() {
     setError(false);
   };
   const INIT_URL =
-    "https://wallup.net/wp-content/uploads/2016/03/10/318375-nature-landscape-lake-mountain-forest-wildflowers-spring-pine_trees-path-Switzerland-HDR.jpg";
+    "https://www.capuchinfranciscans.ie/wp-content/uploads/2022/10/Clouds.jpg";
 
   const COLD_URL =
     "https://s4.scoopwhoop.com/anj/snow/50e4de95-1be0-4440-9efa-995d6eee52ee.jpg";
-  const HOT_URL = "https://www.zastavki.com/pictures/originals/2015/Nature_A_bright_summer_sun_in_the_sky_093669_.jpg";
+  const HOT_URL =
+    "https://www.zastavki.com/pictures/originals/2015/Nature_A_bright_summer_sun_in_the_sky_093669_.jpg";
   const CLOUDY_URL = "https://getwallpapers.com/wallpaper/full/e/9/d/16791.jpg";
   const RAIN_URL =
     "https://png.pngtree.com/background/20230616/original/pngtree-rain-falling-down-on-a-tree-leaves-picture-image_3626721.jpg";
@@ -68,7 +70,7 @@ export default function Weather() {
       style={{
         backgroundImage: `url(${bgImage})`,
       }}
-    > 
+    >
       <div className="Col_one">
         {!info && error === false && (
           <SearchBox
@@ -78,7 +80,7 @@ export default function Weather() {
             handleErrorSearch={handleErrorSearch}
           />
         )}
-
+        {/* <Spinner /> */}
         {info && (
           <InfoBox
             data={info}
@@ -88,7 +90,13 @@ export default function Weather() {
         )}
       </div>
       <div className="col_two">
-        {info && <Clothing className="Clothing_Box" temp={info.days[0].temp} humid={info.days[0].humidity} />}
+        {info && (
+          <Clothing
+            className="Clothing_Box"
+            temp={info.days[0].temp}
+            humid={info.days[0].humidity}
+          />
+        )}
       </div>
 
       {error && <ErrorBox onClick={handleErrorSearch} />}

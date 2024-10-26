@@ -32,19 +32,7 @@ export default function Clothing({ temp, humid }) {
 
     window.location.href = `${ClothingUrl}`;
   };
-  // // if (humid) {
-  // //   console.log("Humidity level:", humid);
-  //   if (humid < 10) {
-  //     bgImage = COLD_URL;
-  //   } else if (humid >= 10 && humid < 50) {
-  //     bgImage = WINDY_URL;
-  //   } else if (humid >= 50 && humid < 75) {
-  //     bgImage = RAIN_URL;
-  //   } else {
-  //     bgImage = HOT_URL;
-  //   }
-  //   console.log("Background Image URL:", bgImage);
-  // // }
+ 
 
   if (temp) {
     console.log("Temp level:", temp);

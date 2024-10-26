@@ -5,11 +5,11 @@
   opacity: 0.7;
 
   height: 35rem;
-  width: 40rem;
+  width: 30rem;
   font-size: 15px;
   align-items: center;
-  margin-left: 20%;
-  padding: 2rem 8rem;
+  margin-left: 50%;
+  padding: 2rem;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
 
@@ -17,6 +17,7 @@
   height: 20rem;
   background-size: contain;
   width: 20rem;
+  margin-left: 3rem;
 }
 h3 {
   text-align: center;
@@ -27,7 +28,7 @@ h3 {
 
 .shop_now {
   margin-top: 30px;
-  margin-left: 5rem;
+  margin-left: 8rem;
   border: none;
   background-color: rgb(222, 185, 49);
   color: black;
