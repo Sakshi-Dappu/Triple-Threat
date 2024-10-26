@@ -18,7 +18,7 @@
   background-size: contain;
   width: 20rem;
   margin-left: 3rem;
-}
+} 
 h3 {
   text-align: center;
   padding: 10px;
@@ -38,4 +38,44 @@ h3 {
   margin-bottom: 2px;
   letter-spacing: 3px;
   font-size: 1.5rem;
+}
+
+@media (max-width: 500px) {
+
+
+  .Clothing_suggestion {
+    border-radius: 3rem;
+    background-color: black;
+    color: white;
+    opacity: 0.7;
+  margin-top: 5rem;
+    height: 20rem;
+    width: 18rem;
+    font-size: 15px;
+    align-items: center;
+    margin-left: 16%;
+    padding: 2.5rem 0.1rem;
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  }
+  .Img {
+    height: 11rem;
+    background-size: contain;
+    width: 11rem;
+   
+    margin-left: 3.5rem;
+  }
+  .shop_now {
+    margin-top: 30px;
+    margin-left: 4rem;
+    border: none;
+    background-color: rgb(222, 185, 49);
+    color: black;
+    border-radius: 2rem;
+    width: 10rem;
+    padding: 6px;
+    margin-bottom: 2px;
+    letter-spacing: 3px;
+    font-size: 1.5rem;
+  }
+  
 }

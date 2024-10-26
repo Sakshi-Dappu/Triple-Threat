@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./SearchBox.css";
 
-export default function SearchBox({ onSearch}) {
+export default function SearchBox({ onSearch }) {
   const [location, setLocation] = useState("");
   const [eventDate, setEventDate] = useState("");
   const [eventTime, setEventTime] = useState("");
@@ -27,15 +27,16 @@ export default function SearchBox({ onSearch}) {
     setEventTime(`${time}:00`);
   };
 
-  
-
   return (
     <div className="searchBoxContainer">
+      <div className="title">Event Details</div>
+
+      <hr />
       <div className="Lables">
         <label className="nameLabels">
-          E n t e r &nbsp;&nbsp; L o c a t i o n:
+          L o c a t i o n :
         </label>
-        &nbsp; &nbsp; &nbsp; 
+
         <input
           onChange={handleInputChange}
           type="text"
@@ -44,10 +45,9 @@ export default function SearchBox({ onSearch}) {
           value={location}
         />
         <br />
-       
         <br />
-        <label className="nameLabels">E n t e r  &nbsp; T i m e :</label>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <label className="nameLabels">T i m e :</label>
+
         <input
           type="time"
           className="searchBox_placeholder"
@@ -57,10 +57,8 @@ export default function SearchBox({ onSearch}) {
         />
         <br />
         <br />
-        <label className="nameLabels">
-          E n t e r&nbsp;&nbsp;  D a t e:
-        </label>
-        &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;
+        <label className="nameLabels"> D a t e :</label>
+
         <input
           type="date"
           className="searchBox_placeholder"
@@ -71,11 +69,11 @@ export default function SearchBox({ onSearch}) {
         <br />
         <br />
       </div>
-    
-        <button className="searchBtn" onClick={handleSearch}>
-          Check weather
-        </button>
-    
+
+      <button className="searchBtnm" onClick={handleSearch}>
+        Check weather
+      </button>
+
       <br />
 
       <br />

@@ -4,14 +4,26 @@
   background-position: center;
   background-repeat: no-repeat;
   height: 95vh;
-  padding: 5rem;
-margin-top: 1.5rem;
+  padding: 3rem;
+  margin-top: 1rem;
   width: 90rem;
   border-radius: 2rem;
   margin-left: 2rem;
- background-image: url("../img/Cloudy.jpeg");
- display: flex;
+
+  display: flex;
 }
 
+@media (max-width: 500px) {
+  .newCont {
+    width: 100vw;
+    /* padding-top: 10rem; */
+    padding: 1rem;
 
+    margin: 0;
+    border-radius: 0;
 
+    background-image: none;
+    height: 100vh;
+    display: block;
+  }
+}

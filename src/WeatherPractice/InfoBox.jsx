@@ -1,9 +1,9 @@
 import React from "react";
 import "./InfoBox.css";
-
+ 
 export default function InfoBox({ data, onClick }) {
   return (
-    <div>
+    <div className="box">
       {data && (
         <>
           <div className="userInfo">
@@ -13,7 +13,7 @@ export default function InfoBox({ data, onClick }) {
             {new Date(data.days[0].datetimeEpoch * 1000).toLocaleString()}
             <br />
             <button className="newSearchBtn" onClick={onClick}>
-              Check different location
+              Edit
             </button>
           </div>
 

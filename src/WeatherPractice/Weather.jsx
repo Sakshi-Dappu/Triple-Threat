@@ -68,6 +68,7 @@ export default function Weather() {
     <div
       className="newCont"
       style={{
+     
         backgroundImage: `url(${bgImage})`,
       }}
     >

@@ -1,6 +1,6 @@
 import React from "react";
 import "./Clothing.css";
-
+ 
 export default function Clothing({ temp, humid }) {
   let bgImage;
   let bgImageValue;
