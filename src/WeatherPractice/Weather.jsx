@@ -10,8 +10,8 @@ export default function Weather() {
   const [info, setInfo] = useState(null);
   const [error, setError] = useState(false);
   const GetData = async (location, eventDate, eventTime) => {
-    
-    const API_Key = process.env.API_Key;
+    const API_Key="YLZJQDHJTSGUDTYJVP3S4ATVZ";
+console.log('API_KEY is :', API_Key);
     console.log("In weather app", location, eventDate, eventTime);
     const URL = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location},IN/${eventDate}T${eventTime}?key=${API_Key}`;
 
@@ -64,11 +64,11 @@ export default function Weather() {
     console.log("Background Image URL:", bgImage);
   }
 
+
   return (
     <div
       className="newCont"
       style={{
-     
         backgroundImage: `url(${bgImage})`,
       }}
     >
@@ -104,3 +104,5 @@ export default function Weather() {
     </div>
   );
 }
+
+
