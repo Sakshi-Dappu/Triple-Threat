@@ -37,7 +37,7 @@ export default function SearchBox({ onSearch }) {
           L o c a t i o n :
         </label>
 
-        <input
+        <input 
           onChange={handleInputChange}
           type="text"
           className="searchBox_placeholder"

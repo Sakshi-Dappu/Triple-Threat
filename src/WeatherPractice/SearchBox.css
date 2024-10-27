@@ -57,11 +57,12 @@ input {
 
 @media (max-width: 500px) {
   .searchBoxContainer {
+    font-size: 1rem;
     border-radius: 0;
     padding: 0;
     margin: 0;
-    width: 24rem;
-    height: 40rem;
+    width: 22.5rem;
+    height: 38rem;
     border-radius: 2rem;
   }
 
@@ -73,7 +74,8 @@ input {
 
   input {
     display: inline;
-    margin-left: 0.5rem;
+    margin-left: 0rem;
+    
   }
 
   .title {
@@ -85,7 +87,7 @@ input {
   }
 
   .search_btn {
-    margin-left: 5rem;
+    margin-left: 4rem;
     border-radius: 2rem;
     padding: 1px;
     font-size: 1rem;
