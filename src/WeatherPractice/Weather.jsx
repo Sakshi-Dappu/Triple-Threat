@@ -9,31 +9,38 @@ import Loader from "./Loader";
 export default function Weather() {
   const [info, setInfo] = useState(null);
   const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(false);
   const GetData = async (location, eventDate, eventTime) => {
     const API_Key = "YLZJQDHJTSGUDTYJVP3S4ATVZ";
 
     console.log("In weather app", location, eventDate, eventTime);
     const URL = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location},IN/${eventDate}T${eventTime}?key=${API_Key}`;
-
+    setLoading(true);
     const response = await fetch(URL);
     console.log(response);
 
     if (response.status == 400 || response.status == 404) {
       setError(true);
+      setLoading(false);
       console.log("Error: Location Not found", response.status);
     } else {
       const JsonResponse = await response.json();
-      setInfo(JsonResponse);
+     
+        setInfo(JsonResponse);
+     
+
       console.log("Response:", JsonResponse);
     }
   };
   const handleNewSearch = () => {
     setInfo(null);
   };
-
+  setTimeout(() => {
+    setLoading(false);
+  }, 2000);
   useEffect(() => {
-    <Loader />;
-  }, info);
+    if (!info) setLoading(false);
+  }, [info]);
 
   const handleErrorSearch = () => {
     setError(false);
@@ -83,8 +90,9 @@ export default function Weather() {
             handleErrorSearch={handleErrorSearch}
           />
         )}
-        <Loader />
-        {info && (
+        {loading && <Loader />}
+
+        {!loading && info && (
           <InfoBox
             data={info}
             className="InfoBox"
@@ -92,8 +100,9 @@ export default function Weather() {
           ></InfoBox>
         )}
       </div>
+
       <div className="col_two">
-        {info && (
+        {!loading && info && (
           <Clothing
             className="Clothing_Box"
             temp={info.days[0].temp}

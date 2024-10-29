@@ -5,7 +5,7 @@
     height: 80px;
     width: 80px;
     animation: spin 1s linear infinite;
-    
+   margin: 18rem 40rem;
 }
 
 @keyframes spin {
