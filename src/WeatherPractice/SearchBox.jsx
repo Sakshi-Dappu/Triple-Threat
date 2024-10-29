@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, {  useState } from "react";
 import "./SearchBox.css";
 
 export default function SearchBox({ onSearch }) {
@@ -27,56 +27,62 @@ export default function SearchBox({ onSearch }) {
     setEventTime(`${time}:00`);
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Form is been submitted");
+    onSearch(location, eventDate, eventTime);
+  };
+
   return (
-    <div className="searchBoxContainer">
-      <div className="title">Event Details</div>
+    <form onSubmit={handleSubmit}>
+      <div className="searchBoxContainer">
+        <div className="title">Event Details</div>
 
-      <hr />
-      <div className="Lables">
-        <label className="nameLabels">
-          L o c a t i o n :
-        </label>
+        <hr />
+        <div className="Lables">
+          <label className="nameLabels">L o c a t i o n :</label>
 
-        <input 
-          onChange={handleInputChange}
-          type="text"
-          className="searchBox_placeholder"
-          placeholder="Event Location"
-          value={location}
-        />
-        <br />
-        <br />
-        <label className="nameLabels">T i m e :</label>
+          <input
+            onChange={handleInputChange}
+            type="text"
+            className="searchBox_placeholder"
+            placeholder="Event Location"
+            value={location}
+          />
+          <br />
+          <br />
+          <label className="nameLabels">T i m e :</label>
 
-        <input
-          type="time"
-          className="searchBox_placeholder"
-          placeholder="event time"
-          onChange={handleEventTime}
-          value={eventTime}
-        />
-        <br />
-        <br />
-        <label className="nameLabels"> D a t e :</label>
+          <input
+            type="time"
+            className="searchBox_placeholder"
+            placeholder="event time"
+            onChange={handleEventTime}
+            value={eventTime}
+          />
+          <br />
+          <br />
+          <label className="nameLabels"> D a t e :</label>
 
-        <input
-          type="date"
-          className="searchBox_placeholder"
-          placeholder="Event Date "
-          onChange={handleEventDate}
-          value={eventDate}
-        />
+          <input
+            type="date"
+            className="searchBox_placeholder"
+            placeholder="Event Date "
+            onChange={handleEventDate}
+            value={eventDate}
+          />
+          <br />
+          <br />
+        </div>
+
+        <button className="search_btn" onClick={handleSearch}>
+          Check weather
+        </button>
+
         <br />
+
         <br />
       </div>
-
-      <button className="search_btn" onClick={handleSearch}>
-        Check weather
-      </button>
-
-      <br />
-
-      <br />
-    </div>
+    </form>
   );
 }

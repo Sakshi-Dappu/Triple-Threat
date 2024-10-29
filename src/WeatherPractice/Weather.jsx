@@ -1,23 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Weather.css";
 import SearchBox from "./SearchBox";
 import InfoBox from "./InfoBox";
 import ErrorBox from "./ErrorBox";
 import Clothing from "./Clothing";
-
+import Loader from "./Loader";
 
 export default function Weather() {
   const [info, setInfo] = useState(null);
   const [error, setError] = useState(false);
   const GetData = async (location, eventDate, eventTime) => {
-    const API_Key="YLZJQDHJTSGUDTYJVP3S4ATVZ";
-console.log('API_KEY is :', API_Key);
+    const API_Key = "YLZJQDHJTSGUDTYJVP3S4ATVZ";
+
     console.log("In weather app", location, eventDate, eventTime);
     const URL = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location},IN/${eventDate}T${eventTime}?key=${API_Key}`;
 
     const response = await fetch(URL);
     console.log(response);
-    console.log("after response");
 
     if (response.status == 400 || response.status == 404) {
       setError(true);
@@ -31,6 +30,10 @@ console.log('API_KEY is :', API_Key);
   const handleNewSearch = () => {
     setInfo(null);
   };
+
+  useEffect(() => {
+    <Loader />;
+  }, info);
 
   const handleErrorSearch = () => {
     setError(false);
@@ -64,7 +67,6 @@ console.log('API_KEY is :', API_Key);
     console.log("Background Image URL:", bgImage);
   }
 
-
   return (
     <div
       className="newCont"
@@ -81,7 +83,7 @@ console.log('API_KEY is :', API_Key);
             handleErrorSearch={handleErrorSearch}
           />
         )}
-        {/* <Spinner /> */}
+        <Loader />
         {info && (
           <InfoBox
             data={info}
@@ -104,5 +106,3 @@ console.log('API_KEY is :', API_Key);
     </div>
   );
 }
-
-
