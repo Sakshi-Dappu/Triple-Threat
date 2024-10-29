@@ -39,7 +39,7 @@ export default function Weather() {
     setLoading(false);
   }, 2000);
   useEffect(() => {
-    if (!info) setLoading(false);
+    if (!info) setLoading(true);
   }, [info]);
 
   const handleErrorSearch = () => {
